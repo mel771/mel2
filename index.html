@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>めるtube</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSSファイルをリンク -->
+</head>
+<body>
+
+    <h1>めるtube</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="URLまたはタイトルの一部を入力">
+        <button onclick="searchVideo()">検索</button>
+    </div>
+    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+    <div class="video-details" id="videoDetails"></div>
+    <div class="results" id="results"></div>
+
+    <script src="script.js"></script> <!-- JavaScriptファイルをリンク -->
+</body>
+</html>
