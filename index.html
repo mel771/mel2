@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>めるtube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px; /* 検索窓の下に余白を追加 */
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        iframe {
+            margin-top: 20px;
+            width: 794px; /* 幅を794ピクセルに設定 */
+            height: 445px; /* 高さを445ピクセルに設定 */
+            display: block; /* ブロック要素にして中央寄せにする */
+            margin-left: auto;
+            margin-right: auto;
+            display: none; /* 初期状態では非表示 */
+        }
+
+        .results {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap; /* 横に並べる */
+            justify-content: center; /* 中央揃え */
+        }
+        .result {
+            margin: 10px; /* 上下のマージンを設定 */
+            cursor: pointer;
+            width: calc(25% - 20px); /* 幅を25%に設定し、マージンを考慮 */
+            max-width: 200px; /* 最大幅を設定 */
+            text-align: left;
+            padding: 10px; /* 内側の余白を追加 */
+            border: 1px solid #ccc; /* 枠線を追加 */
+            border-radius: 5px; /* 角を丸くする */
+            background-color: #f9f9f9; /* 背景色を追加 */
+        }
+        .result img {
+            width: 100%;
+            height: auto;
+        }
+        .video-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .comments {
+            margin-top: 10px;
+        }
+        .load-more {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #007bff; /* ボタンの背景色 */
+            color: white; /* ボタンの文字色 */
+            border: none; /* ボタンの枠線を消す */
+            border-radius: 5px; /* 角を丸くする */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>めるtube</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="URLまたはタイトルの一部を入力">
+        <button onclick="searchVideo()">検索</button>
+    </div>
+    <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+    <div class="video-details" id="videoDetails"></div>
+    <div class="results" id="results"></div>
